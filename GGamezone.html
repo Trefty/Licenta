@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <title>GGamezone - Testează compatibilitatea cu jocuri video</title>
+ <link rel="stylesheet" href="css/style.css">
+  <script>
+window.onload = function() {
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+if (this.readyState === 4 && this.status === 200) {
+var options = JSON.parse(this.responseText);
+var select = document.getElementById("joc");
+for (var i = 0; i < options.length; i++) {
+var option = document.createElement("option");
+option.value = options[i].id;
+option.text = options[i].nume_joc;
+select.appendChild(option);
+       }
+    }
+  };
+  xhr.open("GET", "alegejoc.php", true);
+  xhr.send();
+  };
+function updateSelectedGame() {
+var select = document.getElementById("joc");
+var selectedOption = select.options[select.selectedIndex];
+ document.getElementById("joc_id").value = selectedOption.value;
+  }
+  </script>
+  
+ <audio id="myAudio" loop>
+    <source src="muzica/muzică.mp3" type="audio/mpeg">
+</audio>
+<button onclick="controlAudio()" style="background-color:transparent; border:none;">
+  <img src="imagini/muzică.png" alt="Start/Pauză muzică" style="width:40px; height:30px;">
+</button>
+<input type="range" min="0" max="1" step="0.01" id="volumeControl" onchange="controlVolume()">
+<script>
+ var audio = document.getElementById('myAudio');
+ var volumeControl = document.getElementById('volumeControl');
+  function controlAudio() {
+    if (audio.paused) {
+audio.play();
+    } else {
+ audio.pause();
+    }
+  }
+ function controlVolume() {
+audio.volume = volumeControl.value;
+  }
+</script>
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo-container">
+        <h1 class="logo">GGamezone</h1>
+      </div>
+      <nav class="main-nav">
+        <div class="nav-links">
+ <a href="intrebarisiraspunsuri.html">Intrebari si raspunsuri</a>
+ <a href="inregistrare.php">Inregistrare/Autentificare</a>
+ <a href="contul_meu.php">Contul Meu</a>
+<a href="deconectare.php">
+  <img src="imagini/exit_icon.png" alt="Exit" style="width: 27px; height: 23px;">
+          </a>
+    </div>
+      </nav>
+  </div>
+  </header>
+  <section class="hero-section">
+    <div class="container">
+      <p>Pe acest site poți găsi cerințe minime și recomandate de sistem pentru 150 de jocuri pe PC.</p>
+      <p>Obține rapid și eficient informații despre performanța și compatibilitatea sistemului tău cu cerințele jocurilor video.</p>
+      <form class="compatibility-form" method="POST" action="verificareacompatibilitatii.php">
+        <h3>Testează Compatibilitatea</h3>
+        <div class="form-group">
+     <label for="joc">Alege jocul:</label>
+  <select id="joc" name="joc" onchange="updateSelectedGame()">
+          </select>
+     </div>
+        <input type="hidden" name="joc_id" id="joc_id" value="">
+  <button type="submit">Testează</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="featured-games">
+    <div class="container">
+      <h2>Jocuri populare ale momentului:</h2>
+  
+      <div class="game-card-row">
+        <div class="game-card">
+          <a href="reqHonkai.html">
+            <img src="imagini/Honkai.jpg" alt="Honkai: Star Rail" class="game-card-img">
+            <h3>Honkai: Star Rail</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqCSGO.html">
+            <img src="imagini/CSGo.jpg" alt="CSGo" class="game-card-img">
+            <h3>Counter Strike: Global Offensive</h3>
+          </a>
+        </div>
+
+        <div class="game-card">
+          <a href="reqLOL.html">
+            <img src="imagini/League.jpg" alt="League" class="game-card-img">
+            <h3>League of Legends</h3>
+          </a>
+        </div>
+      </div>
+  
+      <div class="game-card-row">
+        <div class="game-card">
+          <a href="reqValorant.html">
+            <img src="imagini/valorant.jpg" alt="Valorant" class="game-card-img">
+            <h3>Valorant</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqGTA5.html">
+            <img src="imagini/Grand Theft Auto V.jpg" alt="Grand Theft Auto V" class="game-card-img">
+            <h3>Grand Theft Auto V</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqMinecraft.html">
+            <img src="imagini/Minecraft.jpg" alt="Minecraft" class="game-card-img">
+            <h3>Minecraft</h3>
+          </a>
+        </div>
+      </div>
+  
+      <div class="game-card-row">
+        <div class="game-card">
+        <a href="reqOverwatch.html">
+            <img src="imagini/Overwatch.jpg" alt="Overwatch" class="game-card-img">
+            <h3>Overwatch</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqDota2.html">
+            <img src="imagini/Dota 2.jpg" alt="Dota 2" class="game-card-img">
+            <h3>Dota 2</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqHearthstone.html">
+            <img src="imagini/Hearthstone.jpg" alt="Hearthstone" class="game-card-img">
+            <h3>Hearthstone</h3>
+          </a>
+        </div>
+      </div>
+      
+      <div class="game-card-row">
+        <div class="game-card">
+          <a href="reqRocketLeague.html">
+            <img src="imagini/Rocket League.jpg" alt="Rocket League" class="game-card-img">
+       <h3>Rocket League</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqWOW.html">
+            <img src="imagini/WORLD OF WARCRAFT.jpg" alt="World of Warcraft" class="game-card-img">
+            <h3>World of Warcraft</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqZelda.html">
+           <img src="imagini/Zelda.jpg" alt="Zelda" class="game-card-img">
+            <h3>THE LEGEND OF ZELDA: TEARS OF THE KINGDOM</h3>
+         </a>
+      </div>
+      </div>
+      <div class="game-card-row">
+      <div class="game-card">
+         <a href="reqFIFA23.html">
+         <img src="imagini/fifa 23.jpg" alt="fifa 23" class="game-card-img">
+       <h3>FIFA 23</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqSims4.html">
+            <img src="imagini/Sims4.jpg" alt="Sims 4" class="game-card-img">
+            <h3>Sims 4</h3>
+          </a>
+        </div>
+        <div class="game-card">
+          <a href="reqAPEX.html">
+            <img src="imagini/APEX.jpg" alt="APEX LEGENDS" class="game-card-img">
+            <h3>APEX LEGENDS</h3>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-section">
+    <div class="container">
+  <h2>Contactați-ne</h2>
+  <p>Pentru întrebări, sugestii sau orice altceva, nu ezitați să ne contactați:</p>
+      <div class="contact-info">
+        <p>Email: GGamezone@gmail.com</p>
+        <p>Telefon: 0253 284 196</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 GGamezone - Trefty.</p>
+    </div>
+  </footer>
+</body>
+</html>

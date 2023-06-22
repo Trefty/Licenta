@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GGamezone - Intrebari si raspunsuri</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+    padding: 20px;
+        background: linear-gradient(90deg, #0000ff, #800080, #ff0088);
+    color: #fff;
+  }
+    .logo {
+   font-size: 37px;
+   color: #fff;
+   text-decoration: none;
+    }
+    .container {
+    max-width: 800px;
+           margin: 0 auto;
+    }
+    h2 {
+    font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .faq-item {
+  margin-bottom: 30px;
+    }
+    .question {
+  font-size: 24px;
+     font-weight: bold;
+  margin-bottom: 10px;
+    }
+    .answer {
+      margin-left: 20px;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="GGamezone.html" class="logo">
+    GGamezone
+  </a>
+  <div class="container">
+    <h2>Intrebari si raspunsuri</h2>
+    
+    <div class="faq-item"> 
+      <h3 class="question">Cum pot găsi componentele necesare pentru a rula un anumit joc video?</h3>
+      <p class="answer">Pentru a găsi componentele necesare pentru a rula un joc video, poți urma următoarele pași pe sistemul de operare Windows:</p>
+      <ul class="answer">
+        <li>Tastează Windows + R sau introduce "dxdiag" în bara de căutare Windows</li>
+        <li>Apasă Enter sau OK. Aceasta va deschide Instrumentul de Diagnosticare DirectX, care va afișa o sumedenie de informații despre sistemul tău.</li>
+      </ul>
+      <p class="answer">Pe Linux, poți utiliza o varietate de comenzi în terminal pentru a vedea componentele sistemului:</p>
+      <ul class="answer">
+        <li>Pentru a vedea detaliile procesorului: "cat /proc/cpuinfo"</li>
+        <li>Pentru a vedea detaliile memoriei: "free -m"</li>
+        <li>Pentru a vedea detaliile plăcii video: "lspci | grep VGA"</li>
+      </ul>
+      <p class="answer">În macOS, poți urma acești pași:</p>
+      <ul class="answer">
+        <li>Faceți clic pe meniul Apple din colțul din stânga sus al ecranului.</li>
+        <li>Selectați "About This Mac" sau "Despre acest Mac".</li>
+        <li>Aici vei vedea informații despre modelul tău de Mac, procesor, memorie, placa video și spațiul de stocare.</li>
+      </ul>
+      <video controls>
+        <source src="videos/video1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</body>
+</html>

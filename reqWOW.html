@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World of Warcraft</title>
+  <style>
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff4500;}
+      100% { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ff4500, 0 0 60px #ff4500, 0 0 70px #ff4500;}
+    }
+
+    @keyframes shootingStar {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 100%; }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #000 url('imagini/wow.jpg') repeat;
+      animation: shootingStar 3s infinite;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      animation: glow 2s infinite;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    .section {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      max-width: 800px;
+      width: 100%;
+    }
+    
+    .section-title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1>World of Warcraft</h1>
+
+  <div class="section">
+    <h2>Despre joc</h2>
+    <p>World of Warcraft (WoW) este un joc online de tip MMORPG, creat de Blizzard Entertainment. A fost lansat în 2004 și este cel de-al patrulea joc din seria Warcraft, având loc în universul împărtășit de primele trei jocuri din serie.</p>
+    
+    <p>Jucătorii din World of Warcraft explorează un vast, detaliat și persistent open world, unde pot întâlni și interacționa cu alte persoane și cu mediul înconjurător. Jocul are o comunitate online masivă, cu milioane de jucători din întreaga lume, iar interacțiunea cu acești jucători este o parte esențială a experienței de joc.</p>
+    
+    <p>World of Warcraft oferă o multitudine de moduri de joc, inclusiv quest-uri solo, raid-uri de grup, joc de rol, PvP și multe altele. De-a lungul anilor, Blizzard a lansat numeroase expansion-uri care au adăugat noi zone de explorat, rase, clase și mecanici de joc.</p>
+
+    <p>Experiența în World of Warcraft este profund personalizabilă. Jucătorii pot alege dintr-o multitudine de rase și clase pentru personajele lor, fiecare cu abilități și stiluri de joc unice. În plus, există o mare varietate de opțiuni pentru personalizarea aspectului și echipamentului personajului, precum și a abilităților și talantelor acestuia.</p>
+
+  </div>
+</body>
+</html>
